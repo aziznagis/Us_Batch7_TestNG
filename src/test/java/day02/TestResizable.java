@@ -20,7 +20,6 @@ public class TestResizable extends DriverClass {
 
         action.clickAndHold(resizeHandle).moveByOffset(100, 0).release().perform();
 
-
         action.clickAndHold(resizeHandle).moveByOffset(0, 100).release().perform();
 
         action.clickAndHold(resizeHandle).moveByOffset(-150,-150).release().perform(); //expected min value of offset is 150.
