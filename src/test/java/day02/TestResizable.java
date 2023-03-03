@@ -4,6 +4,7 @@ import Utilities.DriverClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
 import org.testng.annotations.Test;
 
 
@@ -33,6 +34,10 @@ public class TestResizable extends DriverClass {
         Actions action = new Actions(driver);
         action.clickAndHold().moveByOffset(-150,-150).release().perform(); //expected min value of offset is 150.
 
+            driver.quit();
+
     }
+
+
 
 }
