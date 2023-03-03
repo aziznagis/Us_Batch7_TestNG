@@ -9,23 +9,29 @@ import org.testng.annotations.Test;
 
 public class TestResizable extends DriverClass {
 
-    @Test
-    public void ResizingFunctionality() {
+
+    @Test(priority = 1)
+         void ResizingVertically() {
 
         driver.get("https://demoqa.com/resizable/");
-
-        Actions action = new Actions(driver);
-
         WebElement resizeHandle = driver.findElement(By.xpath("//*[@id=\"resizableBoxWithRestriction\"]/span"));
-
+        Actions action = new Actions(driver);
         action.clickAndHold(resizeHandle).moveByOffset(100, 0).release().perform();
 
-        action.clickAndHold(resizeHandle).moveByOffset(0, 100).release().perform();
 
-        action.clickAndHold(resizeHandle).moveByOffset(-150,-150).release().perform(); //expected min value of offset is 150.
+    }
+         @Test(priority = 2)
+         void ResizingHorizontally(){
 
+        Actions action = new Actions(driver);
+        action.clickAndHold().moveByOffset(0, 100).release().perform();
+    }
 
+        @Test(priority = 3)
+        void ResizingDiagonally(){
 
+        Actions action = new Actions(driver);
+        action.clickAndHold().moveByOffset(-150,-150).release().perform(); //expected min value of offset is 150.
 
     }
 
